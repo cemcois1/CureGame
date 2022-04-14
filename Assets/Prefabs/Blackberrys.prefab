@@ -81,7 +81,7 @@ MonoBehaviour:
   duration: 1
   delay: 0.1
   jumpPower: 0.5
-  upValue: 0.02
+  upValue: 0.15
 --- !u!1001 &4485894391363631047
 PrefabInstance:
   m_ObjectHideFlags: 0
