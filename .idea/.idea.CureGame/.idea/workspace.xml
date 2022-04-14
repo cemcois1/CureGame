@@ -28,6 +28,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -64,7 +65,8 @@
       <workItem from="1649835737558" duration="1668000" />
       <workItem from="1649856844408" duration="853000" />
       <workItem from="1649863727105" duration="6565000" />
-      <workItem from="1649955369115" duration="6898000" />
+      <workItem from="1649955369115" duration="7221000" />
+      <workItem from="1649963218365" duration="3438000" />
     </task>
     <servers />
   </component>

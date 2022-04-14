@@ -7,25 +7,28 @@ using Random = UnityEngine.Random;
 public class JumpToPosition : MonoBehaviour
 {
     [SerializeField] private Transform[] targetTransforms;
+    [SerializeField] private Transform[] objects;
     private static int transformIndex;
     [SerializeField] private float duration;
     [SerializeField] [Range(0, 1)] private float delay;
     [SerializeField] private float jumpPower;
-    [SerializeField] private Transform[] objects;
-
+    [SerializeField] private float upValue = 0.1f;
 
     private void OnMouseDown()
     {
         if (transformIndex >= targetTransforms.Length) return;
-        transform.DOJump(targetTransforms[transformIndex].position + Vector3.up * .1f, jumpPower, 1, duration);
         for (int i = 0; i < objects.Length; i++)
         {
-            var range = 0;
-            objects[i].DOJump(targetTransforms[transformIndex].position + new Vector3(range, (i + 1) * 0.1f, range),
+            var rangeX = Random.Range(-.02f, .02f);
+            var rangeZ = Random.Range(-.02f, .02f);
+            objects[i].parent = targetTransforms[transformIndex];
+            objects[i].gameObject.AddComponent<Rigidbody>();
+            objects[i].DOJump(
+                targetTransforms[transformIndex].position + new Vector3((i + 1) * rangeX, upValue, (i + 1) * rangeZ),
                 jumpPower, 1,
                 duration).SetDelay(delay * (i + 1));
-            ;
         }
+
         transformIndex++;
         if (transformIndex == targetTransforms.Length)
         {
