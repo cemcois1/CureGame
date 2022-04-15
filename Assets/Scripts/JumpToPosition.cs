@@ -21,12 +21,15 @@ public class JumpToPosition : MonoBehaviour
         {
             var rangeX = Random.Range(-.02f, .02f);
             var rangeZ = Random.Range(-.02f, .02f);
-            objects[i].parent = targetTransforms[transformIndex];
-            objects[i].gameObject.AddComponent<Rigidbody>();
+            objects[i].parent = targetTransforms[transformIndex].GetChild(0);
+
+            var i1 = i;
             objects[i].DOJump(
-                targetTransforms[transformIndex].position + new Vector3((i + 1) * rangeX, upValue, (i + 1) * rangeZ),
-                jumpPower, 1,
-                duration).SetDelay(delay * (i + 1));
+                    targetTransforms[transformIndex].position +
+                    new Vector3((i + 1) * rangeX, upValue, (i + 1) * rangeZ),
+                    jumpPower, 1,
+                    duration).SetDelay(delay * (i + 1))
+                .OnComplete((() => objects[i1].gameObject.AddComponent<Rigidbody>()));
         }
 
         transformIndex++;
