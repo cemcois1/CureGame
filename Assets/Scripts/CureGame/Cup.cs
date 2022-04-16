@@ -62,8 +62,11 @@ namespace Developing.Scripts.CureGame
                             isSelectable = true;
                             complatedCounter++;
                             print(complatedCounter);
-                            if (complatedCounter == 3) UIManager.instance.OpenDoneButton();
-                            
+                            if (complatedCounter == 3)
+                            {
+                                UIManager.instance.OpenDoneButton();
+                                isSelectable = false;
+                            }
                         }));
                 }
             }

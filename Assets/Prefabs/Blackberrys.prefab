@@ -82,7 +82,7 @@ MonoBehaviour:
   delay: 0.1
   jumpPower: 0.5
   upValue: 0.2
-  fruitColor: {r: 1, g: 0.57924527, b: 0.79826826, a: 1}
+  fruitColor: {r: 0.99215686, g: 0, b: 1, a: 1}
 --- !u!1001 &4485894391363631047
 PrefabInstance:
   m_ObjectHideFlags: 0

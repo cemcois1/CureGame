@@ -18,9 +18,11 @@ public class JumpToPosition : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] private float upValue = 0.1f;
     [SerializeField] private Color fruitColor;
+    private  bool isClickable = true;
 
     private void OnMouseDown()
     {
+        if (!isClickable) return;
         if (transformIndex >= cupTransforms.Length) return;
         for (int i = 0; i < objects.Length; i++)
         {
@@ -38,9 +40,11 @@ public class JumpToPosition : MonoBehaviour
 
         cupTransforms[transformIndex].gameObject.GetComponent<ColourHolder>().color = fruitColor;
         transformIndex++;
+        isClickable = false;
         if (transformIndex == cupTransforms.Length)
         {
             UIManager.instance.OpenDoneButton();
+            
         }
     }
 }

@@ -161,7 +161,7 @@ MonoBehaviour:
   delay: 0.1
   jumpPower: 0.5
   upValue: 0.2
-  fruitColor: {r: 0.882353, g: 0.8078432, b: 0.3254902, a: 1}
+  fruitColor: {r: 1, g: 0.83928573, b: 0, a: 1}
 --- !u!65 &4593721087919886550
 BoxCollider:
   m_ObjectHideFlags: 0
