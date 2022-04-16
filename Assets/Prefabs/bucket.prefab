@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7020450889618492392}
   - component: {fileID: 7020450889618492395}
   - component: {fileID: 20769359}
+  - component: {fileID: 8055598750098965325}
   m_Layer: 0
   m_Name: bucket
   m_TagString: Untagged
@@ -96,3 +97,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2ec74bf870d4a47a1bc7bca66faec3cc, type: 3}
+--- !u!114 &8055598750098965325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020450889618492401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thickness: 0
+  material: {fileID: 0}
+  filter: -65535
+  m_SourceCollider: {fileID: 20769359}
+  m_DistanceField: {fileID: 0}

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39c9aa08640478e94a9d3adbd55d60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransforms:
+  cupTransforms:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -160,7 +160,8 @@ MonoBehaviour:
   duration: 1
   delay: 0.1
   jumpPower: 0.5
-  upValue: 0.15
+  upValue: 0.2
+  fruitColor: {r: 0.882353, g: 0.8078432, b: 0.3254902, a: 1}
 --- !u!65 &4593721087919886550
 BoxCollider:
   m_ObjectHideFlags: 0

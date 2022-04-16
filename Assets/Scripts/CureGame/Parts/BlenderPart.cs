@@ -19,6 +19,7 @@ namespace Developing.Scripts.CureGame
         [SerializeField] private float throwTime = .5f;
         [SerializeField] private Transform fallingTransform;
         [SerializeField] private Transform fillingTransform;
+        [SerializeField] private Faucet[] faucets;
 
 
         public override void StartPart()
@@ -42,6 +43,7 @@ namespace Developing.Scripts.CureGame
                 component.startPosition = cups[i].transform.position;
                 component.fillingTransform = fillingTransform;
                 component.finalTransform = cupFinishtransforms[i];
+                component.faucet = faucets[i];
             }
         }
     }
