@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public static class StaticMethods
 {
-    
     public static IEnumerator MakeActionWithDelay(Action action, float delay)
     {
         float tmp = 0;
@@ -28,6 +27,15 @@ public static class StaticMethods
         rigidBody.detectCollisions = false;
         return rigidbodyTransform;
     }
+
+    public static Transform ResetRigidbodyMovement(this Transform rigidbodyTransform)
+    {
+        Rigidbody rigidBody = rigidbodyTransform.GetComponent<Rigidbody>();
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.angularVelocity = Vector3.zero;
+        return rigidbodyTransform;
+    }
+
     public static Transform EnableRigidbody(this Transform rigidbodyTransform)
     {
         Rigidbody rigidBody = rigidbodyTransform.GetComponent<Rigidbody>();
@@ -36,6 +44,7 @@ public static class StaticMethods
         rigidBody.detectCollisions = true;
         return rigidbodyTransform;
     }
+
     public static Coroutine MakeAction(this MonoBehaviour monoBehaviour, Action action, float delay)
     {
         monoBehaviour.StartCoroutine(MakeActionWithDelay(action, delay));

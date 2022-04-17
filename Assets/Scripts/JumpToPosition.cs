@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+[SelectionBase]
 public class JumpToPosition : MonoBehaviour
 {
     [FormerlySerializedAs("targetTransforms")] [SerializeField]
@@ -18,7 +19,7 @@ public class JumpToPosition : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] private float upValue = 0.1f;
     [SerializeField] private Color fruitColor;
-    private  bool isClickable = true;
+    private bool isClickable = true;
 
     private void OnMouseDown()
     {
@@ -32,10 +33,14 @@ public class JumpToPosition : MonoBehaviour
             var i1 = i;
             objects[i].DOJump(
                     cupTransforms[transformIndex].position +
-                    new Vector3((i + 1) * rangeX, upValue, (i + 1) * rangeZ),
+                    new Vector3((i / 2 + 1) * rangeX, upValue, (i / 2 + 1) * rangeZ),
                     jumpPower, 1,
-                    duration).SetDelay(delay * (i + 1))
-                .OnComplete((() => { objects[i1].gameObject.AddComponent<Rigidbody>(); }));
+                    duration).SetDelay(delay * (i  + 1))
+                .OnComplete((() =>
+                {
+                    objects[i1].gameObject.AddComponent<Rigidbody>();
+                    objects[i1].ResetRigidbodyMovement();
+                }));
         }
 
         cupTransforms[transformIndex].gameObject.GetComponent<ColourHolder>().color = fruitColor;
@@ -44,7 +49,6 @@ public class JumpToPosition : MonoBehaviour
         if (transformIndex == cupTransforms.Length)
         {
             UIManager.instance.OpenDoneButton();
-            
         }
     }
 }

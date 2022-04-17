@@ -19,6 +19,7 @@ namespace Developing.Scripts.CureGame
         public Transform finalTransform;
         float fillingTime = 2f;
         public Faucet faucet;
+        public GameState gameState;
 
         private void OnMouseUp()
         {
@@ -71,5 +72,10 @@ namespace Developing.Scripts.CureGame
                 }
             }
         }
+    }
+
+    public enum GameState
+    {
+        
     }
 }

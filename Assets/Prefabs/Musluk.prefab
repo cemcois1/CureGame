@@ -253,7 +253,7 @@ MonoBehaviour:
   render: 0
   shader: {fileID: 4800000, guid: 801733041f66b49e1b3c2101471db877, type: 3}
   particleColor: {r: 0.78, g: 0.989, b: 1, a: 0.49019608}
-  radiusScale: 1.78
+  radiusScale: 2
 --- !u!114 &5265819868436542219
 MonoBehaviour:
   m_ObjectHideFlags: 0

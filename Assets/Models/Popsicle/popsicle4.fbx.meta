@@ -3,7 +3,22 @@ guid: 1648b74aa68391b44a914e5959ddfc7f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: candle1
+    second: {fileID: 2100000, guid: 7b76139bd50178f4ca1935738d7a14ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: candle2
+    second: {fileID: 2100000, guid: d033fe4dfa55e304783efb5494abc90a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: popsicle1
+    second: {fileID: 2100000, guid: fdaf0ccd8676e2449a457748242ae423, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

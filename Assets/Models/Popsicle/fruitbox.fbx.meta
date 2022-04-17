@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5c5b9a3eeae38b4395153014ef2e923
+guid: cb3f6d1948fbcc94685ace8f8f0c4473
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: 69fc31e05721b414d89c3b93e055c3f9, type: 2}
+      name: Material.007
+    second: {fileID: 2100000, guid: 15eeb4ab8469863499e85d7d8bb9be9e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -39,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.15
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 0.15
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
