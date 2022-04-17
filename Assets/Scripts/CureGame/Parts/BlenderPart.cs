@@ -21,7 +21,7 @@ namespace Developing.Scripts.CureGame
         [SerializeField] private Transform fillingTransform;
         [SerializeField] private Faucet[] faucets;
 
-
+        
         public override void StartPart()
         {
             base.StartPart();
@@ -39,7 +39,7 @@ namespace Developing.Scripts.CureGame
                 yield return new WaitForSeconds(throwTime);
                 var component = cups[i].gameObject.AddComponent<Cup>();
                 component.duration = throwTime;
-                component.targetTransform = fallingTransform;
+                component.blenderFallTransform = fallingTransform;
                 component.startPosition = cups[i].transform.position;
                 component.fillingTransform = fillingTransform;
                 component.finalTransform = cupFinishtransforms[i];

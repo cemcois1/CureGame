@@ -19,7 +19,13 @@ public class JumpToPosition : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] private float upValue = 0.1f;
     [SerializeField] private Color fruitColor;
+    [SerializeField] private int randomDivideValue = 2;
     private bool isClickable = true;
+
+    private void OnEnable()
+    {
+        transformIndex = 0;
+    }
 
     private void OnMouseDown()
     {
@@ -27,15 +33,27 @@ public class JumpToPosition : MonoBehaviour
         if (transformIndex >= cupTransforms.Length) return;
         for (int i = 0; i < objects.Length; i++)
         {
-            var rangeX = Random.Range(-.02f, .02f);
-            var rangeZ = Random.Range(-.02f, .02f);
+            float rangeX;
+            float rangeZ;
+            if (gameObject.name.Contains("BlueBerries") || gameObject.name.Contains("Blackberrys"))
+            {
+                rangeX = 0;
+                rangeZ = 0;
+            }
+            else
+            {
+                rangeX = Random.Range(-.01f, .01f);
+                rangeZ = Random.Range(-.01f, .01f);
+            }
+
             objects[i].parent = cupTransforms[transformIndex].GetChild(0);
             var i1 = i;
+
             objects[i].DOJump(
                     cupTransforms[transformIndex].position +
-                    new Vector3((i / 2 + 1) * rangeX, upValue, (i / 2 + 1) * rangeZ),
+                    new Vector3((i / randomDivideValue + 1) * rangeX, upValue, (i / randomDivideValue + 1) * rangeZ),
                     jumpPower, 1,
-                    duration).SetDelay(delay * (i  + 1))
+                    duration).SetDelay(delay * (i + 1))
                 .OnComplete((() =>
                 {
                     objects[i1].gameObject.AddComponent<Rigidbody>();

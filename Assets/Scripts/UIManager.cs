@@ -119,7 +119,7 @@ public class UIManager : MonoBehaviour
         GameManager.PrepareLevel?.Invoke();
     }
 
-    private void LevelComplatedUI()
+    public void LevelComplatedUI()
     {
         StartCoroutine(StaticMethods.MakeActionWithDelay(() => LevelCompleted.SetActive(true), 2f));
     }

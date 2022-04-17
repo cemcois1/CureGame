@@ -10,7 +10,10 @@ namespace Developing.Scripts.CureGame
     {
         public static bool isSelectable = true;
         public static int complatedCounter;
-        public Transform targetTransform;
+
+        [FormerlySerializedAs("targetTransform")]
+        public Transform blenderFallTransform;
+
         public float duration;
         private bool isRotateable;
         [SerializeField] float rotateAmount = -0.85f;
@@ -19,12 +22,17 @@ namespace Developing.Scripts.CureGame
         public Transform finalTransform;
         float fillingTime = 2f;
         public Faucet faucet;
-        public GameState gameState;
+
+        private void OnEnable()
+        {
+            isSelectable = true;
+            complatedCounter = 0;
+        }
 
         private void OnMouseUp()
         {
             if (!isSelectable) return;
-            transform.DOJump(targetTransform.position, .2f, 1, duration);
+            transform.DOJump(blenderFallTransform.position, .2f, 1, duration);
             isSelectable = false;
             isRotateable = true;
         }
@@ -72,10 +80,5 @@ namespace Developing.Scripts.CureGame
                 }
             }
         }
-    }
-
-    public enum GameState
-    {
-        
     }
 }
