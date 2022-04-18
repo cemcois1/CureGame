@@ -51,7 +51,7 @@ namespace Developing.Scripts.CureGame
                 if (transform.GetChild(0).rotation.x < rotateAmount)
                 {
                     isFalling = true;
-                    transform.GetChild(0).DORotate(Vector3.right * -45f, 2f).OnComplete(() =>
+                    transform.GetChild(0).DORotate(Vector3.right * -45f, 1f).OnComplete(() =>
                     {
                         isFalling = false;
                         isRotateable = false;
