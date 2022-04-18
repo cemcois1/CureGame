@@ -18,6 +18,12 @@ namespace Developing.Scripts.CureGame
         public HorizontalColorManager colorManager;
         private bool isFalling = false;
         [SerializeField] [Range(0f, 1f)] private float flowSpeed = 1f;
+        public Transform pupsicleCup;
+        public Transform pupsicle;
+        public Transform frigeTransform;
+        public Vector3 popsicleStartPosition;
+        [SerializeField] public Transform frigeKapakTransform;
+        [SerializeField] public Transform customerHandTransform;
 
         private void OnEnable()
         {
@@ -66,13 +72,13 @@ namespace Developing.Scripts.CureGame
                                 print(complatedCounter);
                                 if (complatedCounter == 3)
                                 {
-                                    UIManager.instance.LevelComplatedUI();
+                                    StartFreezingPart();
                                     isSelectableCups = false;
                                 }
-                            }).SetDelay(2.5f));
+                            }).SetDelay(1.5f));
                     });
                 }
-                else
+                /*else
                 {
                     isRotateable = false;
                     transform.GetChild(0).DetachChildren();
@@ -86,12 +92,39 @@ namespace Developing.Scripts.CureGame
                             print(complatedCounter);
                             if (complatedCounter == 3)
                             {
-                                UIManager.instance.LevelComplatedUI();
+                                StartFreezingPart();
                                 isSelectableCups = false;
                             }
                         }).SetDelay(2.5f));
-                }
+                }*/
             }
+        }
+
+        //frigeKapakTransform.DORotate(Vector3.up * -120, .5f);
+        private void StartFreezingPart()
+        {
+            CustomerSelector.instance.ChangePositionAndAnimation();
+            var seq = DOTween.Sequence();
+            seq.Append(pupsicleCup.DOMove(frigeTransform.position, 1f)); //
+            seq.Append(frigeKapakTransform.DOLocalRotate(Vector3.up * 0, .5f)).SetDelay(1f);
+
+            seq.Append(frigeKapakTransform.DOLocalRotate(Vector3.up * -120, .5f)).SetDelay(1f);
+            seq.SetDelay(1f);
+            seq.Append(pupsicleCup.DOMove(popsicleStartPosition, .5f)).SetDelay(1f);
+            //dolabı uzaklaştır
+            seq.Append(frigeKapakTransform.parent.DOMove(frigeKapakTransform.parent.position + Vector3.forward * -5f,
+                1));
+            //dondurmayı ele ver
+            seq.Append(pupsicle.DOLocalMove(Vector3.forward * 0.53f,
+                .5f).SetDelay(.5f));
+
+            seq.Append(pupsicle.DOLocalRotate((Vector3.up * 180), .5f).SetDelay(.5f));
+            seq.Append(pupsicle.DOMove(customerHandTransform.position, .5f).SetDelay(.5f))
+                .OnComplete(() =>
+                {
+                    CustomerSelector.instance.PlayHappyParticle();
+                    UIManager.instance.LevelComplatedUI();
+                });
         }
 
         /// <summary>

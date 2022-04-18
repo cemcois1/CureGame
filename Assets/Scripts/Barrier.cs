@@ -9,7 +9,6 @@ public class Barrier : MonoBehaviour,IDamageGiveable
     {
         CharacterManager.CharacterStateChanged(CharacterState.Fall);
         
-        AudioManager.PlayBarierAudioClipSound?.Invoke();
         if (true) CinemachineManager.ShakeScreen?.Invoke();
     }
 }

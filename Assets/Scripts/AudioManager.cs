@@ -6,107 +6,34 @@ using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
-    public static Action LevelEndFillingSound;
-    public static Action ItemCollectedSound;
-    public static Action FinalAudioClipSound;
-    public static Action PlayBarierAudioClipSound;
+    #region Singleton
 
-    [SerializeField] private AudioSource _collectSource;
-    [SerializeField] private AudioSource _Hitsource;
-    [SerializeField] private AudioSource _Runsource;
-    [SerializeField] private AudioSource _Minigamesource;
-    [SerializeField] private AudioSource BarierAudioSource;
+    public static AudioManager instance;
 
-    [FormerlySerializedAs("_MinigameAudioClip")] [SerializeField]
-    private AudioClip _minigameFinishedAudioClip;
-
-    [FormerlySerializedAs("_finalAudioClip")] [SerializeField]
-    private AudioClip _finalFillingAudioClip;
-
-    [SerializeField] private AudioClip _collectingAudioClip;
-
-
-    private void OnEnable()
+    private void Awake()
     {
-        GameManager.LoadMinilevel += CloseSoundsforMinilevel;
-        GameManager.LevelFailed += CloseSoundsforMinilevel;
-        GameManager.MinilevelFinished += PlayLevelEndFinishSound;
-        GameManager.PrepareLevel += ResetPitchValue;
-
-        CharacterManager.CharacterStateChanged += RockBreakingSoundEffect;
-        CharacterManager.CharacterStateChanged += WalkingSound;
-
-        LevelEndFillingSound += PlayLevelEndFillingSound;
-        ItemCollectedSound += PlayItemCollectedSound;
-        FinalAudioClipSound += PlayFinalAudioClipSound;
-        PlayBarierAudioClipSound += BarierAudioClipSound;
+        instance = this;
     }
 
-    private void OnDisable()
-    {
-        GameManager.LoadMinilevel -= CloseSoundsforMinilevel;
-        GameManager.LevelFailed -= CloseSoundsforMinilevel;
-        GameManager.MinilevelFinished -= PlayLevelEndFinishSound;
-        GameManager.PrepareLevel -= ResetPitchValue;
-        
-        CharacterManager.CharacterStateChanged -= RockBreakingSoundEffect;
-        CharacterManager.CharacterStateChanged -= WalkingSound;
+    #endregion
 
-        LevelEndFillingSound -= PlayLevelEndFillingSound;
-        ItemCollectedSound -= PlayItemCollectedSound;
-        FinalAudioClipSound -= PlayFinalAudioClipSound;
-        PlayBarierAudioClipSound -= BarierAudioClipSound;
+    [SerializeField] private AudioSource _stateFinishedSound;
+    [SerializeField] private AudioSource _ItemSellectedSound;
+    [SerializeField] private AudioSource _TalkSound;
+
+
+    public void ItemSellectedSound()
+    {
+        _ItemSellectedSound.Play();
     }
 
-    private void BarierAudioClipSound()
+    public void TalkSound()
     {
-        BarierAudioSource.Play();
+        _TalkSound.Play();
     }
 
-    private void ResetPitchValue()
+    public void stateFinishedSound()
     {
-        _collectSource.pitch = 1f;
-    }
-
-    private void CloseSoundsforMinilevel()
-    {
-        _Runsource.enabled = false;
-    }
-
-    private void WalkingSound(CharacterState state)
-    {
-        if (state == CharacterState.Running)
-        {
-            _Runsource.enabled = true;
-            _Runsource.Play();
-        }
-    }
-
-    private void PlayFinalAudioClipSound()
-    {
-        _collectSource.PlayOneShot(_finalFillingAudioClip);
-    }
-
-
-    private void PlayItemCollectedSound()
-    {
-        _collectSource.Play();
-    }
-
-    private void PlayLevelEndFillingSound()
-    {
-        _collectSource.pitch = _collectSource.pitch < 2f ? _collectSource.pitch + .1f : 2f;
-        _collectSource.Play();
-    }
-
-    private void PlayLevelEndFinishSound()
-    {
-        _collectSource.PlayOneShot(_minigameFinishedAudioClip);
-    }
-
-    private void RockBreakingSoundEffect(CharacterState state)
-    {
-        if (state != CharacterState.Fight) return;
-        _Hitsource.Play();
+        _stateFinishedSound.Play();
     }
 }

@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     #region Singleton
 
     public static UIManager instance;
-    public int MoneyCount = 150;
+    [HideInInspector] public int MoneyCount = 150;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject LevelCompleted;
 
     private bool _isGameOver;
+    [SerializeField] private GameObject degugPanel;
 
     private void OnEnable()
     {
@@ -70,6 +71,15 @@ public class UIManager : MonoBehaviour
         Tap2Play.SetActive(false);
     }
 
+    public void OpenDebugPanel()
+    {
+        degugPanel.SetActive(true);
+    }
+
+    public void CloseDebugPanel()
+    {
+        degugPanel.SetActive(false);
+    }
 
     public void OnLevelFailed()
     {
@@ -81,7 +91,7 @@ public class UIManager : MonoBehaviour
         _isGameOver = true;
     }
 
-    
+
     public void GoNextPart()
     {
         PartManager.PartComplated?.Invoke();
@@ -104,7 +114,7 @@ public class UIManager : MonoBehaviour
         SellectObjectsText.SetActive(false);
         InputControlller.OnMouseClicked -= CloseSellectObjectsText;
     }
-    
+
     #region Event Methods
 
     public void LoadNextLevel()
@@ -125,5 +135,4 @@ public class UIManager : MonoBehaviour
     }
 
     #endregion
-
 }
