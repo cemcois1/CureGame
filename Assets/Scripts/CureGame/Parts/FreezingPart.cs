@@ -10,8 +10,25 @@ namespace Developing.Scripts.CureGame
         [SerializeField] private Transform[] cupStartTransforms;
         private Transform[] cupTargettransforms;
         [SerializeField] private Transform[] cupFinishtransforms;
+
+        /// <summary>
+        /// must be parent of pupsicle
+        /// </summary>
+        [SerializeField] private Transform pupsicleCup;
+
+        [SerializeField] private Transform pupsicle;
+
         [SerializeField] private Transform fallingTransform;
         public HorizontalColorManager colorManager;
+        [SerializeField] private Transform frigeTransform;
+        private Vector3 popsicleStartPosition;
+        [SerializeField] private Transform customerHandTransform;
+        [SerializeField] private Transform frigeKapakTransform;
+
+        private void OnEnable()
+        {
+            popsicleStartPosition = pupsicleCup.position;
+        }
 
         public override void StartPart()
         {
@@ -25,6 +42,12 @@ namespace Developing.Scripts.CureGame
                 cup.popsicleFallTransform = fallingTransform;
                 cup.colorManager = colorManager;
                 cupTransforms[i].DOMove(cupStartTransforms[i].position, .5f);
+                cup.pupsicleCup = pupsicleCup;
+                cup.pupsicle = pupsicle;
+                cup.frigeTransform = frigeTransform;
+                cup.popsicleStartPosition = popsicleStartPosition;
+                cup.frigeKapakTransform = frigeKapakTransform;
+                cup.customerHandTransform = customerHandTransform;
             }
 
             print("FreezingPart");

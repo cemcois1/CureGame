@@ -7,7 +7,7 @@ namespace Developing.Scripts.CureGame
     {
         [SerializeField] private GameObject[] cameras;
         [SerializeField] private int index;
-
+        
         private void OnEnable()
         {
             GameManager.LevelStarted += ChangeCamera;
