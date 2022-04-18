@@ -29,8 +29,10 @@ public class JumpToPosition : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         if (!isClickable) return;
         if (transformIndex >= cupTransforms.Length) return;
+        AudioManager.instance.ItemSellectedSound();
         for (int i = 0; i < objects.Length; i++)
         {
             float rangeX;

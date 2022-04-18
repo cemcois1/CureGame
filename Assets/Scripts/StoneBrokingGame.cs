@@ -75,8 +75,7 @@ public class StoneBrokingGame : MonoBehaviour, IMiniGame
                 
             }
 
-            value?.DOMove(Particletransforms[i].position, flowDuration)
-                .OnComplete(()=>AudioManager.LevelEndFillingSound?.Invoke());
+            value?.DOMove(Particletransforms[i].position, flowDuration);
             if (nullcount>10)
             {
                 yield return null;
@@ -102,7 +101,6 @@ public class StoneBrokingGame : MonoBehaviour, IMiniGame
                 print("Normal Win");
                 FallParticles(UsedParticleParent);
                 GameManager.MinilevelFinished?.Invoke();
-                AudioManager.FinalAudioClipSound?.Invoke();
                 return;
             }
 
@@ -110,7 +108,6 @@ public class StoneBrokingGame : MonoBehaviour, IMiniGame
         }
 
         print("Perfect Win");
-        AudioManager.FinalAudioClipSound?.Invoke();
         UsedParticleParent.gameObject.SetActive(false);
         ShowScoulpt();
         PlayParticle();

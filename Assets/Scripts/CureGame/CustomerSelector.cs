@@ -24,8 +24,14 @@ public class CustomerSelector : MonoBehaviour
     [SerializeField] private GameObject[] customerlist;
     [SerializeField] private int index;
 
-    [ContextMenu("changeCustomerList")]
-    public void changeCustomerList()
+    private void OnEnable()
+    {
+        DebugPanel.instance.customerSelector = this;
+        AudioManager.instance.TalkSound();
+    }
+
+    [ContextMenu("changeCustomerfromList")]
+    public void changeCustomerfromList()
     {
         for (int i = 0; i < customerlist.Length; i++)
         {

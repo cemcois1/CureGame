@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject LevelCompleted;
 
     private bool _isGameOver;
+    [SerializeField] private GameObject degugPanel;
 
     private void OnEnable()
     {
@@ -70,6 +71,15 @@ public class UIManager : MonoBehaviour
         Tap2Play.SetActive(false);
     }
 
+    public void OpenDebugPanel()
+    {
+        degugPanel.SetActive(true);
+    }
+
+    public void CloseDebugPanel()
+    {
+        degugPanel.SetActive(false);
+    }
 
     public void OnLevelFailed()
     {

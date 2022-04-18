@@ -126,7 +126,6 @@ public class ParticleCollector : MonoBehaviour
             {
                 pointCounter += item.Point;
                 item.Collect();
-                AudioManager.ItemCollectedSound?.Invoke();
             }, .5f);
             //Rigidbody rigidbody = other.GetComponent<Rigidbody>();
             //rigidbody.isKinematic = true;
