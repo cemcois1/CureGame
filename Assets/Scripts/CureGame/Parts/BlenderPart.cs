@@ -30,7 +30,6 @@ namespace Developing.Scripts.CureGame
 
         IEnumerator StartPartIEnumerator()
         {
-            print("Blender Part Loading..");
             yield return new WaitForSeconds(1.5f);
             blender.enabled = true;
             for (int i = 0; i < cups.Length; i++)

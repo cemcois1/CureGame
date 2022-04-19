@@ -52,7 +52,6 @@ namespace Developing.Scripts.CureGame
                 cup.customSellector = customerSelector;
             }
 
-            print("FreezingPart");
         }
     }
 }

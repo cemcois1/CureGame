@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
 
     private bool _isGameOver;
     [SerializeField] private GameObject degugPanel;
+    public Image ReferanceIcon;
 
     private void OnEnable()
     {
@@ -63,12 +64,14 @@ public class UIManager : MonoBehaviour
         LevelFailed.SetActive(false);
         Tap2Play.SetActive(true);
         _isGameOver = false;
+        ReferanceIcon.gameObject.SetActive(false);
     }
 
 
     public void OnLevelStarted()
     {
         Tap2Play.SetActive(false);
+        ReferanceIcon.gameObject.SetActive(true);
     }
 
     public void OpenDebugPanel()

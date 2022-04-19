@@ -55,12 +55,10 @@ namespace Developing.Scripts.CureGame
                         () =>
                         {
                             faucet._obiEmiter.speed = 1;
-                            print("Yes");
                             faucet._obiParticleRenderer.particleColor = GetComponent<ColourHolder>().color;
                             this.MakeAction(() =>
                             {
                                 faucet._obiEmiter.speed = 0;
-                                print("Yes 2");
                                 faucet.transform.parent = transform;
                             }, 1f);
                         }));
@@ -70,7 +68,6 @@ namespace Developing.Scripts.CureGame
                         {
                             isSelectable = true;
                             complatedCounter++;
-                            print(complatedCounter);
                             if (complatedCounter == 3)
                             {
                                 UIManager.instance.OpenDoneButton();

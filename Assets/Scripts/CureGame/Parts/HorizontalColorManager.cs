@@ -48,7 +48,6 @@ namespace Developing.Scripts.CureGame
             }
             else
             {
-                print(color.ToString());
                 float h, s, v;
                 Color.RGBToHSV(color, out h, out s, out v);
                 var mycolor = Color.HSVToRGB(h, 60f, v);

@@ -7,7 +7,6 @@ namespace Developing.Scripts.CureGame
         public override void StartPart()
         {
             base.StartPart();
-            print("Sellect");
             //UIManager.instance.OpenSellectObjectsText();
         }
     }
