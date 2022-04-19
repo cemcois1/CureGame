@@ -10,7 +10,8 @@ namespace Developing.Scripts.CureGame
         [SerializeField] private Transform[] cupStartTransforms;
         private Transform[] cupTargettransforms;
         [SerializeField] private Transform[] cupFinishtransforms;
-
+        [SerializeField] private CustomerSelector customerSelector;
+        
         /// <summary>
         /// must be parent of pupsicle
         /// </summary>
@@ -48,6 +49,7 @@ namespace Developing.Scripts.CureGame
                 cup.popsicleStartPosition = popsicleStartPosition;
                 cup.frigeKapakTransform = frigeKapakTransform;
                 cup.customerHandTransform = customerHandTransform;
+                cup.customSellector = customerSelector;
             }
 
             print("FreezingPart");

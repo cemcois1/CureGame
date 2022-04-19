@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Developing.Scripts.CureGame;
 using DG.Tweening;
 using UnityEngine;
 
@@ -38,6 +39,9 @@ public class CustomerSelector : MonoBehaviour
         }
 
         customerlist[index % customerlist.Length].SetActive(true);
+        customerlist[index % customerlist.Length].GetComponent<Animator>().SetTrigger("LevelEndAnimation");
+        customerlist[index % customerlist.Length].transform.DOMove(levelEndTransform.position, 2f);
+
         index++;
     }
 
@@ -46,6 +50,7 @@ public class CustomerSelector : MonoBehaviour
     {
         for (int i = 0; i < animator.Length; i++)
         {
+            print(animator.Length);
             if (!animator[i].gameObject.activeSelf) return;
             animator[i].SetTrigger("LevelEndAnimation");
             animator[i].transform.DOMove(levelEndTransform.position, 2f);

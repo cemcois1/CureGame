@@ -32,6 +32,14 @@ public class DebugPanel : MonoBehaviour
         }
     }
 
+    public void ChangeCustomerPosAndAnim()
+    {
+        for (int i = 0; i < customerSelectorList.Length; i++)
+        {
+            customerSelectorList[i].ChangePositionAndAnimation();
+        }
+    }
+
     public void ChangeMaterial(int index)
     {
         materialList[index].color = _colorPicker.color;

@@ -24,6 +24,7 @@ namespace Developing.Scripts.CureGame
         public Vector3 popsicleStartPosition;
         [SerializeField] public Transform frigeKapakTransform;
         [SerializeField] public Transform customerHandTransform;
+        public CustomerSelector customSellector;
 
         private void OnEnable()
         {
@@ -63,13 +64,11 @@ namespace Developing.Scripts.CureGame
                         isRotateable = false;
                         transform.GetChild(0).DetachChildren();
                         var seq = DOTween.Sequence();
-                        print("Finished");
                         seq.Append(transform.DOMove(finishTransform.position, movingDuration).OnComplete(
                             () =>
                             {
                                 isSelectableCups = true;
                                 complatedCounter++;
-                                print(complatedCounter);
                                 if (complatedCounter == 3)
                                 {
                                     StartFreezingPart();
@@ -103,7 +102,7 @@ namespace Developing.Scripts.CureGame
         //frigeKapakTransform.DORotate(Vector3.up * -120, .5f);
         private void StartFreezingPart()
         {
-            CustomerSelector.instance.ChangePositionAndAnimation();
+            customSellector.ChangePositionAndAnimation();
             var seq = DOTween.Sequence();
             seq.Append(pupsicleCup.DOMove(frigeTransform.position, 1f)); //
             seq.Append(frigeKapakTransform.DOLocalRotate(Vector3.up * 0, .5f)).SetDelay(1f);
@@ -135,7 +134,6 @@ namespace Developing.Scripts.CureGame
         private void FillPopsicle(float coloramount, Color color, int index)
         {
             this.MakeAction(() => colorManager.SetProgress(Mathf.Abs(coloramount), color, index), 1f - (index / 3f));
-            print("Change Color");
         }
     }
 }

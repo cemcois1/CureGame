@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4593721087412067672}
   - component: {fileID: 4593721087412067673}
   - component: {fileID: 987370130}
+  - component: {fileID: 7271452166388054504}
   m_Layer: 0
   m_Name: orange_tangerine (1)
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +97,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &7271452166388054504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721087412067674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4593721087919886569
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +201,7 @@ GameObject:
   - component: {fileID: 4593721088248060976}
   - component: {fileID: 4593721088248060977}
   - component: {fileID: 415036746}
+  - component: {fileID: 7579056144629852405}
   m_Layer: 0
   m_Name: orange_tangerine (4)
   m_TagString: Untagged
@@ -236,7 +250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,6 +286,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &7579056144629852405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721088248060978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4593721088386856649
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +310,7 @@ GameObject:
   - component: {fileID: 4593721088386856630}
   - component: {fileID: 4593721088386856631}
   - component: {fileID: 195351429}
+  - component: {fileID: 6840790924352394468}
   m_Layer: 0
   m_Name: orange_tangerine
   m_TagString: Untagged
@@ -332,7 +359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,6 +395,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &6840790924352394468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721088386856649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4593721088825151417
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +419,7 @@ GameObject:
   - component: {fileID: 4593721088825151399}
   - component: {fileID: 4593721088825151416}
   - component: {fileID: 2062068402}
+  - component: {fileID: 5860177009498142346}
   m_Layer: 0
   m_Name: orange_tangerine (3)
   m_TagString: Untagged
@@ -428,7 +468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -464,6 +504,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &5860177009498142346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721088825151417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4593721089091462871
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +528,7 @@ GameObject:
   - component: {fileID: 4593721089091462869}
   - component: {fileID: 4593721089091462870}
   - component: {fileID: 1161578112}
+  - component: {fileID: 1620846322339601339}
   m_Layer: 0
   m_Name: orange_tangerine (2)
   m_TagString: Untagged
@@ -524,7 +577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -560,6 +613,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &1620846322339601339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721089091462871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4593721089189360512
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +637,7 @@ GameObject:
   - component: {fileID: 4593721089189360526}
   - component: {fileID: 4593721089189360527}
   - component: {fileID: 563860126}
+  - component: {fileID: 4379193356233985107}
   m_Layer: 0
   m_Name: orange_tangerine (5)
   m_TagString: Untagged
@@ -620,7 +686,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1618560210960038738, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+  - {fileID: 2100000, guid: b39c3c6a0828c794c88280e27638ce9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -656,3 +722,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -492553094320808993, guid: 5738e789869dfe146b9ac2d04deed4da, type: 3}
+--- !u!114 &4379193356233985107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593721089189360512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db524cf17b964d62a27ebac243c0217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
