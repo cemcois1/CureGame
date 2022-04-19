@@ -174,7 +174,7 @@ MonoBehaviour:
   delay: 0.1
   jumpPower: 0.5
   upValue: 0.2
-  fruitColor: {r: 1, g: 0.9764706, b: 0.24313726, a: 1}
+  fruitColor: {r: 1, g: 0.9647059, b: 0.72156864, a: 1}
   randomDivideValue: 2
 --- !u!65 &4593721087919886550
 BoxCollider:

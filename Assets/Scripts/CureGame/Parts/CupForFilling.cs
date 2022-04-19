@@ -121,7 +121,7 @@ namespace Developing.Scripts.CureGame
             seq.Append(pupsicle.DOMove(customerHandTransform.position, .5f).SetDelay(.5f))
                 .OnComplete(() =>
                 {
-                    CustomerSelector.instance.PlayHappyParticle();
+                    customSellector.PlayHappyParticle();
                     UIManager.instance.LevelComplatedUI();
                 });
         }

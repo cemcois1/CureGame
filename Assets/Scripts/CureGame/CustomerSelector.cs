@@ -50,8 +50,6 @@ public class CustomerSelector : MonoBehaviour
     {
         for (int i = 0; i < animator.Length; i++)
         {
-            print(animator.Length);
-            if (!animator[i].gameObject.activeSelf) return;
             animator[i].SetTrigger("LevelEndAnimation");
             animator[i].transform.DOMove(levelEndTransform.position, 2f);
         }
