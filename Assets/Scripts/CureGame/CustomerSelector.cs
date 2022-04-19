@@ -26,7 +26,6 @@ public class CustomerSelector : MonoBehaviour
 
     private void OnEnable()
     {
-        DebugPanel.instance.customerSelector = this;
         AudioManager.instance.TalkSound();
     }
 
@@ -38,7 +37,6 @@ public class CustomerSelector : MonoBehaviour
             customerlist[i].SetActive(false);
         }
 
-        print("Worked");
         customerlist[index % customerlist.Length].SetActive(true);
         index++;
     }

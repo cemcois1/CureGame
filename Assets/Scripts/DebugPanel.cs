@@ -5,18 +5,31 @@ using UnityEngine;
 
 public class DebugPanel : MonoBehaviour
 {
+    #region Singleton
+
     public static DebugPanel instance;
-    [HideInInspector] public CustomerSelector customerSelector;
-    [SerializeField] private Material[] materialList;
-    [SerializeField] private FlexibleColorPicker _colorPicker;
 
     private void Awake()
     {
         instance = this;
     }
+
+    #endregion
+
+    public CustomerSelector[] customerSelectorList;
+    [SerializeField] private Material[] materialList;
+    [SerializeField] private FlexibleColorPicker _colorPicker;
+
+
     public void ChangeCustomerView()
     {
-        customerSelector.changeCustomerfromList();
+        for (int i = 0; i < customerSelectorList.Length; i++)
+        {
+            if (customerSelectorList[i].gameObject.activeSelf)
+            {
+                customerSelectorList[i].changeCustomerfromList();
+            }
+        }
     }
 
     public void ChangeMaterial(int index)
